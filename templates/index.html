@@ -1,0 +1,374 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chá dos Noivos</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <!-- CAPA -->
+    <section class="capa">
+        <div class="container">
+
+            <img src="{% static 'img/capa.jpg' %}" class="img-full">
+
+            <h1>Chá dos Noivos</h1>
+            <p>Data • Hora • Local - Rua das Flores</p>
+
+        </div>
+    </section>
+
+    <!-- MENSAGEM -->
+    <section class="mensagem">
+        <div class="container">
+            <img src="{% static 'img/mensagem.jpg' %}" class="img-full">
+        </div>
+    </section>
+
+    <!-- PROGRAMACAO -->
+    <section class="programacao">
+        <div class="container">
+            <img src="{% static 'img/programacao.jpg' %}" class="img-full">
+        </div>
+    </section>
+
+    <!-- CHAMADA -->
+    <section class="chamada">
+
+        <div class="container">
+
+            <h2 class="script-branco">Descubra agora</h2>
+
+            <h1 class="texto-branco">
+                COMO VOCÊ PODE FAZER<br>
+                PARTE DESSE MOMENTO<br>
+                SUPER ESPECIAL DE<br>
+                NOSSAS VIDAS!
+            </h1>
+
+        </div>
+
+    </section>
+
+    <!-- ENXOVAL -->
+    <section class="enxoval">
+
+        <div class="container">
+
+            <img src="{% static 'img/enxoval.jpg' %}" class="img-full">
+
+        </div>
+
+    </section>
+
+    <!-- PIX -->
+    <section class="pix">
+
+        <div class="container">
+            <img src="{% static 'img/pix.jpg' %}" class="img-full">
+        </div>
+
+    </section>
+
+    <!-- CONFIRMAÇÃO -->
+    <section class="confirmacao">
+
+        <div class="container">
+
+            <img src="{% static 'img/confirmacao.jpg' %}" class="img-full">
+
+            <button onclick="abrirModal()" class="btn-confirmar">
+                Confirmar Presença
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- MODAL -->
+
+    <div id="modalPresenca" class="modal">
+
+        <div class="modal-conteudo">
+
+            <span class="fechar" onclick="fecharModal()">×</span>
+
+            <h2 class="titulo-modal">Confirmar Presença</h2>
+
+            <p>Digite seu nome ou nome do casal</p>
+
+            <input type="text" id="nomeConvidado" placeholder="Ex: Lucas e Vitória" required>
+
+            <button onclick="confirmarPresenca()" class="btn-enviar">
+                Confirmar
+            </button>
+
+            <p id="mensagemConfirmacao"></p>
+
+        </div>
+
+    </div>
+    <div id="modalEnxoval" class="modal">
+
+        <div class="modal-conteudo modal-grande">
+
+            <button class="fechar" onclick="fecharEnxoval()">×</button>
+
+            <h2 class="titulo-modal">Lista de Enxoval</h2>
+
+            <div class="grid-enxoval">
+
+                <div>
+
+                    <h3>COZINHA</h3>
+                    <ul>
+                        <li onclick="escolherItem(event,'Conjunto de Talheres (Inox)')">Conjunto de Talheres (Inox)</li>
+                        <li onclick="escolherItem(event,'Kit de Facas')">Kit de Facas</li>
+                        <li onclick="escolherItem(event,'Utensílios de Silicone')">Utensílios de Silicone (Colher,
+                            Espátula etc... de preferência <b>Preto)</b></li>
+                        <li onclick="escolherItem(event,'Conjunto de Taças')">Conjunto de Taças</li>
+                        <li onclick="escolherItem(event,'Potes Herméticos')">Potes Herméticos (Arroz, Macarrão, Açucar)
+                        </li>
+                        <li onclick="escolherItem(event,'Travessas')">Travessas</li>
+                        <li onclick="escolherItem(event,'Assadeiras')">Assadeiras (Pudim, Pizza, Quadrada)</li>
+                        <li onclick="escolherItem(event,'Jogo de Copos')">Jogo de Copos</li>
+                        <li onclick="escolherItem(event,'Escorredor de Macarrão')">Escorredor de Macarrão</li>
+                        <li onclick="escolherItem(event,'Jogo de Panelas')">Jogo de Panelas</li>
+                        <li onclick="escolherItem(event,'Jogo de Pratos')">Jogo de Pratos</li>
+                        <li onclick="escolherItem(event,'Porta Condimentos')">Porta Condimentos</li>
+                        <li onclick="escolherItem(event,'Panela de Pressão')">Panela de Pressão</li>
+                        <li onclick="escolherItem(event,'Bows')">Bows (Tigelas e Cumbucas)</li>
+                    </ul>
+
+                    <h3>CAMA, MESA E BANHO <br>
+                        (Neutros, sem estampas)
+                    </h3>
+                    <ul>
+                        <li onclick="escolherItem(event,'Travesseiros')">Travesseiros</li>
+                        <li onclick="escolherItem(event,'Almofadas')">Almofadas</li>
+                        <li onclick="escolherItem(event,'Edredom')">Edredom</li>
+                        <li onclick="escolherItem(event,'Lençol')">Lençol</li>
+                        <li onclick="escolherItem(event,'Toalhas')">Toalhas</li>
+                        <li onclick="escolherItem(event,'Toalha de Mesa')">Toalha de Mesa</li>
+                        <li onclick="escolherItem(event,'Jogo Americano')">Jogo Americano</li>
+                    </ul>
+
+                    <h3>BANHEIRO</h3>
+                    <ul>
+                        <li onclick="escolherItem(event,'Cesto de Roupas')">Cesto de Roupas</li>
+                        <li onclick="escolherItem(event,'Kit Banheiro')">Kit de Banheiro (porta sabão, escova e etc...)
+                        </li>
+                        <li onclick="escolherItem(event,'Lixeira de Banheiro')">Lixeira de Banheiro (Inox)</li>
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h3>ELETRODOMÉSTICOS</h3>
+                    <ul>
+                        <li onclick="escolherItem(event,'Airfryer')">Airfryer</li>
+                        <li onclick="escolherItem(event,'Purificador de Água')">Purificador de água</li>
+                        <li onclick="escolherItem(event,'Ferro de Passar')">Ferro de Passar</li>
+                        <li onclick="escolherItem(event,'Microondas')">Microondas</li>
+                        <li onclick="escolherItem(event,'Batedeira')">Batedeira</li>
+                        <li onclick="escolherItem(event,'Alexa')">Alexa</li>
+                        <li onclick="escolherItem(event,'Aspirador de Pó')">Aspirador de Pó</li>
+                        <li onclick="escolherItem(event,'Panela Elétrica')">Panela Elétrica</li>
+                        <li onclick="escolherItem(event,'Máquina de Café')">Máquina de Café</li>
+                        <li onclick="escolherItem(event,'Processador de Alimentos')">Processador de Alimentos</li>
+                        <li onclick="escolherItem(event,'Sanduicheira')">Sanduicheira</li>
+                    </ul>
+
+                    <h3>OUTROS</h3>
+                    <ul>
+                        <li onclick="escolherItem(event,'Cortinas')">Cortinas (Branca, Bege, Cinza)</li>
+                        <li onclick="escolherItem(event,'Caixa ferramentas')">Caixa de Ferramentas</li>
+                        <li onclick="escolherItem(event,'Mangueira')">Mangueira</li>
+                        <li onclick="escolherItem(event,'Furadeira')">Furadeira</li>
+                    </ul>
+
+                    <h3>PALETA DE CORES</h3>
+
+                    <div class="paleta">
+                        <div class="cor cor1"></div>
+                        <div class="cor cor2"></div>
+                        <div class="cor cor3"></div>
+                        <div class="cor cor4"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p id="mensagemEscolha"></p>
+
+            <p id="mensagemEscolha"></p>
+
+            <button id="btnConfirmarPresente" class="btn-enviar" onclick="confirmarPresente()" style="display:none;">
+                Confirmar presente
+            </button>
+        </div>
+    </div>
+
+    <script>
+
+        function abrirModal() {
+            document.getElementById("modalPresenca").style.display = "flex";
+        }
+
+        function fecharModal() {
+            document.getElementById("modalPresenca").style.display = "none";
+        }
+
+        function confirmarPresenca() {
+
+            let nome = document.getElementById("nomeConvidado").value;
+
+            if (nome.trim() === "") {
+                alert("Digite seu nome");
+                return;
+            }
+
+            fetch("/confirmar_presenca/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+                body: `nome=${nome}`
+            })
+                .then(response => response.json())
+                .then(data => {
+
+                    if (data.status === "ok") {
+
+                        document.getElementById("modalPresenca").style.display = "none";
+
+                        document.getElementById("modalEnxoval").style.display = "flex";
+
+                    }
+
+                });
+
+        }
+
+        function escolherItem(event, item) {
+
+            let itens = document.querySelectorAll("#modalEnxoval li");
+
+            itens.forEach(li => {
+                li.classList.remove("item-escolhido");
+            });
+
+            event.target.classList.add("item-escolhido");
+
+            document.getElementById("mensagemEscolha").innerHTML =
+                "Você escolheu: " + item;
+
+            document.getElementById("btnConfirmarPresente").style.display = "block";
+
+        }
+
+        function fecharEnxoval() {
+            let modal = document.getElementById("modalEnxoval");
+
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+
+            let modal = document.getElementById("modalEnxoval");
+
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+
+        }
+
+        function confirmarPresente() {
+
+            let nome = document.getElementById("nomeConvidado").value;
+
+            let itemSelecionado = document.querySelector(".item-escolhido");
+
+            if (!itemSelecionado) {
+                alert("Escolha um presente primeiro 🎁");
+                return;
+            }
+
+            let item = itemSelecionado.innerText;
+
+            fetch("/salvar_presente/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+                body: `nome=${encodeURIComponent(nome)}&presente=${encodeURIComponent(item)}`
+            })
+                .then(response => response.json())
+                .then(data => {
+
+                    if (data.status === "erro") {
+
+                        document.getElementById("mensagemEscolha").innerHTML =
+                            "❌ " + data.mensagem;
+
+                    } else {
+
+                        document.getElementById("mensagemEscolha").innerHTML =
+                            "🎉 Presente confirmado! Muito obrigado por fazer parte desse momento especial!";
+
+                        itemSelecionado.classList.add("item-bloqueado");
+                        itemSelecionado.classList.remove("item-escolhido");
+
+                    }
+
+                })
+        }
+
+        function carregarPresentesEscolhidos() {
+
+            fetch("/presentes_escolhidos/")
+                .then(response => response.json())
+                .then(data => {
+
+                    let itens = document.querySelectorAll("#modalEnxoval li");
+
+                    itens.forEach(li => {
+
+                        let nomeItem = li.innerText.trim();
+
+                        if (data.includes(nomeItem)) {
+
+                            li.classList.add("item-bloqueado");
+
+                        }
+
+                    });
+
+                });
+
+        }
+
+        window.onload = carregarPresentesEscolhidos;
+
+
+    </script>
+
+</body>
+
+</html>
