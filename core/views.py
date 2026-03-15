@@ -15,7 +15,7 @@ def salvar_presente(request):
         nome = request.POST.get("nome")
         presente = request.POST.get("presente")
 
-        if PresenteEscolhido.objects.filter(presente=presente).exists():
+        if PresenteEscolhido.objects.filter(presentes=presente).exists():
             return JsonResponse ({
                 "status": "erro",
                 "mensagem":"Esse presente já foi escolhido."
