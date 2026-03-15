@@ -11,8 +11,8 @@ class ConfirmarPresença(models.Model):
 
 class PresenteEscolhido(models.Model):
     nome_convidado = models.CharField(max_length=100)
-    presentes = models.CharField(max_length=100, unique=True)
+    presente = models.CharField(max_length=100, unique=True)
     data = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.nome_convidado} - {self.presentes}"
+        return f"{self.nome_convidado} - {self.presente}"

@@ -15,7 +15,7 @@ def salvar_presente(request):
         nome = request.POST.get("nome")
         presente = request.POST.get("presente")
 
-        if PresenteEscolhido.objects.filter(presentes=presente).exists():
+        if PresenteEscolhido.objects.filter(presente=presente).exists():
             return JsonResponse ({
                 "status": "erro",
                 "mensagem":"Esse presente já foi escolhido."
@@ -32,14 +32,11 @@ def salvar_presente(request):
 
 
 def presentes_escolhidos(request):
-
     presentes = PresenteEscolhido.objects.values_list("presentes", flat=True)
 
     return JsonResponse(list(presentes), safe=False)
 
-
 from django.views.decorators.csrf import csrf_exempt
-
 
 @csrf_exempt
 def confirmar_presenca(request):
