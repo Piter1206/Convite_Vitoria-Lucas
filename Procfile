@@ -1,1 +1,1 @@
-web: gunicorn Projeto_Noivos.wsgi
+web: gunicorn projeto_noivos.wsgi
