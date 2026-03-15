@@ -73,7 +73,7 @@ button {
     padding: 14px 35px;
     font-size: 16px;
     background: #a67c52;
-    color: white;
+    color: black;
     border: none;
     border-radius: 30px;
     cursor: pointer;
@@ -232,7 +232,7 @@ h3 {
     width: auto;
     height: auto;
 
-    font-size: 22px;
+    font-size: 28px;
     line-height: 1;
     cursor: pointer;
 }
@@ -437,7 +437,7 @@ h3 {
 @media(max-width:600px) {
 
     .fechar {
-        font-size: 22px;
+        font-size: 26px;
         top: 8px;
         right: 10px;
     }
