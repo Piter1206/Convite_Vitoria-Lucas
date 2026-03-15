@@ -230,6 +230,16 @@ h3 {
     z-index: 999;
 }
 
+@media(max-width:600px) {
+
+    .fechar {
+        font-size: 22px;
+        top: 10px;
+        right: 12px;
+    }
+
+}
+
 .modal-conteudo input {
     width: 100%;
     padding: 12px;
