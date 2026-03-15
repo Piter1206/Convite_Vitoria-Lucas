@@ -32,11 +32,14 @@ def salvar_presente(request):
 
 
 def presentes_escolhidos(request):
+
     presentes = PresenteEscolhido.objects.values_list("presentes", flat=True)
 
     return JsonResponse(list(presentes), safe=False)
 
+
 from django.views.decorators.csrf import csrf_exempt
+
 
 @csrf_exempt
 def confirmar_presenca(request):
