@@ -223,11 +223,18 @@ h3 {
 
 .fechar {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 30px;
+    top: 10px;
+    right: 12px;
+
+    background: none;
+    border: none;
+    padding: 0;
+    width: auto;
+    height: auto;
+
+    font-size: 22px;
+    line-height: 1;
     cursor: pointer;
-    z-index: 999;
 }
 
 .modal-conteudo input {
@@ -431,8 +438,8 @@ h3 {
 
     .fechar {
         font-size: 22px;
-        top: 10px;
-        right: 12px;
+        top: 8px;
+        right: 10px;
     }
 
 }
