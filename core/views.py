@@ -32,7 +32,8 @@ def salvar_presente(request):
 
 
 def presentes_escolhidos(request):
-    presentes = PresenteEscolhido.objects.values_list("presentes", flat=True)
+
+    presentes = PresenteEscolhido.objects.values_list("presente", flat=True)
 
     return JsonResponse(list(presentes), safe=False)
 
